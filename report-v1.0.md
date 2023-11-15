@@ -50,6 +50,9 @@
     - `all`   全能报告
     - `love`  恋爱报告
     - `king`  人格报告 
+    - `life`  命运报告
+    - `relate`  人际报告 
+    - `career`  职业报告 
 
   - header头参数lang的值
     - `sc` 简体中文
