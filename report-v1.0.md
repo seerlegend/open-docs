@@ -29,9 +29,10 @@
 #### TOKEN使用
 
   ```bash
-  curl --location 'https://dev-open.wowseer.com/api/report/all' \
+  curl --location 'https://dev-open.wowseer.com/api/report/birth/all' \
     --header 'Authorization: 2001234.1699943199.bf08195e265a83e13630531519708becdb66b602263b628edd672343a7b9b187' \
     --header 'Content-Type: application/json' \
+    --header 'lang: sc' \
     --data '{
         "name": "John",
         "sex": 1,
@@ -43,7 +44,7 @@
 ## 接口说明
   - 请求方式 `POST`
 
-  - 接口地址 `https://{{host}}/report/{{type}}`
+  - 接口地址 `https://{{host}}/report/birth/{{type}}`
 
   - 路由参数type的值
     - `all`   全能报告
@@ -81,7 +82,7 @@
 
 - 基于`curl`命令进行请求
   ```bash
-  curl --location 'https://dev-open.wowseer.com/api/report/all' \
+  curl --location 'https://dev-open.wowseer.com/api/report/birth/all' \
   --header 'Authorization: 2001234.1699943199.bf08195e265a83e13630531519708becdb66b602263b628edd672343a7b9b187' \
   --header 'Content-Type: application/json' \
   --data '{
@@ -117,7 +118,7 @@
 - 获取报告原始数据
 
   ```bash
-  curl --location 'https://dev-open.wowseer.com/api/detail/report?s=EPaZna-KxAQ2s'
+  curl --location 'https://dev-open.wowseer.com/api/detail?s=EPaZna-KxAQ2s'
   ```
 
   ```json
