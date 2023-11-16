@@ -11,12 +11,15 @@
 ## 接口认证
 
 #### 前提参数
-
   - AppID (通过合作沟通群获取)
   - AppSercet (通过合作沟通群获取)
 
-#### TOKEN计算(PHP代码示例)
+#### 多语言 lang 的取值范围
+  - sc 简体中文
+  - tc 繁体中文
+  - ko 韩语
 
+#### TOKEN计算(PHP代码示例)
   ```php
   $appid      = 2001234;
   $appSecret  = "55df84d0b2e96f4ac392cbbcbaaedc93";
@@ -27,12 +30,10 @@
   ```
 
 #### TOKEN使用
-
   ```bash
   curl --location 'https://dev-open.wowseer.com/api/report/birth/all' \
     --header 'Authorization: 2001234.1699943199.bf08195e265a83e13630531519708becdb66b602263b628edd672343a7b9b187' \
     --header 'Content-Type: application/json' \
-    --header 'lang: sc' \
     --data '{
         "name": "John",
         "sex": 1,
@@ -43,9 +44,7 @@
 
 ## 生日报告
   - 请求方式 `POST`
-
   - 接口地址 `https://{{host}}/report/birth/{{type}}`
-
   - 路由参数type的值
     - `all`   全能报告
     - `love`  恋爱报告
@@ -53,11 +52,6 @@
     - `life`  命运报告
     - `relate`  人际报告 
     - `career`  职业报告 
-
-  - header头参数lang的值
-    - `sc` 简体中文
-    - `tc` 繁体中文
-    - `ko` 汉语
 
   - JSON参数
 >
@@ -81,7 +75,7 @@
   |data.url |string |        通过HiSeer提供的H5链接预览报告内容               |
   |data.s |string |       报告码               |
 
-## 请求样例
+### 生日<span style="color: green;">全能报告</span>请求样例
 
 - 基于`curl`命令进行请求
   ```bash
@@ -98,12 +92,12 @@
 
 - 失败情况
 
-  ```json
-  {
-      "code": 303,
-      "msg": "参数错误"
-  }
-```
+    ```json
+    {
+        "code": 303,
+        "msg": "参数错误"
+    }
+    ```
 
 - 成功情况
 
@@ -118,10 +112,10 @@
   }
   ```
 
-- 获取报告原始数据
+- 获取生日全能报告原始数据范例
 
   ```bash
-  curl --location 'https://dev-open.wowseer.com/api/detail?s=EPaZna-KxAQ2s'
+  curl --location 'https://dev-open.wowseer.com/api/detail?s=EPaZna-KxAQ2s&lang=sc'
   ```
 
   ```json
@@ -615,12 +609,6 @@
     - `feel`  合盘暧昧报告
     - `love`  合盘热恋报告
 
-
-  - header头参数lang的值
-    - `sc` 简体中文
-    - `tc` 繁体中文
-    - `ko` 汉语
-
   - JSON参数
 >
   |参数|必选|类型|说明|
@@ -629,8 +617,6 @@
   |users.gender  |`true`  |int   |性别 1=男，2=女
   |users.solar   |`true`  |string|生日 YYYY-MM-DD 类似2004-05-14 其中年份不得小于1900年
   |users.times   |false   |string|具体出生时辰 例如 准确时间12:00 或模糊时间 12:00-12:59
-
-
 
   - 响应内容
 > 
@@ -642,7 +628,7 @@
   |data.url |string |        通过HiSeer提供的H5链接预览报告内容               |
   |data.s |string |       报告码               |
 
-## 请求样例
+### 合盘<span style="color: green;">热恋报告</span>请求样例
 
 - 基于`curl`命令进行请求
   ```bash
@@ -688,10 +674,10 @@
     }
   ```
 
-- 获取报告原始数据
+- 获取合盘热恋报告原始数据范例
 
   ```bash
-  curl --location 'https://dev-open.wowseer.com/api/detail?s=EPaZna-KxAQ2s'
+  curl --location 'https://dev-open.wowseer.com/api/detail?s=EPaZna-KxAQ2s&lang=sc'
   ```
 
   ```json
