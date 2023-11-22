@@ -84,7 +84,7 @@
   |:-----  |:-------:|:-----:|:-----  
   |name    |`ture`  |string|姓名                          |
   |sex     |`true`  |int   |性别 1=男，2=女
-  |solar   |`true`  |string|生日 YYYY-MM-DD 类似2004-05-14 其中年份不得小于1900年
+  |solar   |`true`  |string|生日 YYYY-MM-DD 类似2004-05-14 其中年份不得小于1900年，日期不能大于今天
   |times   |false   |string|具体出生时辰 例如 准确时间12:00 或模糊时间 12:00-12:59
   |title   |false   |string|客户标题 `<50` 字(使用`data.url`预览时，html标题将显示此文字)
   |brand   |false   |string|客户品牌图片地址，如`https://image-home.com/branch.png` `<200` 字(使用`data.url`预览时，html底部将显示此图片)
@@ -640,7 +640,7 @@
   |:-----  |:-------:|:-----:|:-----  
   |users.name    |`ture`  |string|姓名                          |
   |users.gender  |`true`  |int   |性别 1=男，2=女
-  |users.solar   |`true`  |string|生日 YYYY-MM-DD 类似2004-05-14 其中年份不得小于1900年
+  |users.solar   |`true`  |string|生日 YYYY-MM-DD 类似2004-05-14 其中年份不得小于1900年,日期不得大于今天
   |users.times   |false   |string|具体出生时辰 例如 准确时间12:00 或模糊时间 12:00-12:59
 
   - 响应内容
@@ -1118,9 +1118,10 @@
   |:-----  |:-------:|:-----:|:-----  
   |name    |`ture`  |string|姓名 长度低于30                         |
   |gender  |`true`  |int   |性别 1=男，2=女
-  |solar   |`true`  |string|生日 YYYY-MM-DD 类似2004-05-14 其中年份不得小于1900年
+  |solar   |`true`  |string|生日 YYYY-MM-DD 类似2004-05-14 其中年份不得小于1900年，日期不能大于今天
+  |year    |`ture`  |int| 年份 例如 2025 不得小于当前年份 ，不得大于 2049
   |times   |false   |string|具体出生时辰 例如 准确时间12:00 或模糊时间 12:00-12:59
-  |year    |`ture`  |int| 年份 例如 2025
+
   
 
   - 响应内容
@@ -1347,8 +1348,8 @@
   |:-----  |:-------:|:-----:|:-----  
   |name    |`ture`  |string|姓名 长度低于30                         |
   |gender  |`true`  |int   |性别 1=男，2=女
-  |title   |`true`  |string|卦题 例如 爱情
-  |other   |`true`  |string|简要的额外的补充信息 具体为 何时何地为什么想达到什么目的
+  |title   |`true`  |string|卦题 例如 爱情 长度低于50
+  |other   |`true`  |string|简要的额外的补充信息 具体为 何时何地为什么想达到什么目的 长度低于200
   |lys     |`ture`  |string| 六爻的每一卦的值 0=阳爻，1=阴爻，2=动阳爻，3=动阴爻，将每一个爻的值用英文逗号拼接传递，例如 3,2,1,0,3,2
   |when    |`ture`  |string| 起卦日期 YYYY-MM-DD 例如2023-02-26
   
@@ -1503,11 +1504,12 @@
         "msg": "参数错误"
     }
     ```
-    
+
 - 成功情况
-  ```json
-  {
-      "code": 0,
-      "msg": "success",
-      "data": {}
-  }
+    ```json
+    {
+        "code": 0,
+        "msg": "success",
+        "data": {}
+    }
+    ```
