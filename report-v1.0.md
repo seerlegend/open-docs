@@ -2,11 +2,15 @@
 
   本接口主要功能是根据用户信息，获取相关报告
 
-## 服务域名
+## 服务域名host
 
-  - 测试环境 `https://dev-open.wowseer.com/api`
-  - 生产环境 `TODO 根据合作情况进行确定`
+  - 测试环境  `https://dev-open.wowseer.com/api`
+  - api生产环境 `TODO 根据合作情况进行确定`
 
+## 网页可视化地址 h5url
+
+  - 测试环境  `https://dev-open.wowseer.com/h5/#`
+  - api生产环境 `TODO 根据合作情况进行确定`
 
 ## 接口认证
 
@@ -73,7 +77,7 @@
   - 路由参数type的值
     - `all`   全能报告
     - `love`  恋爱报告
-    - `king`  人格报告 
+    - `kind`  人格报告 
     - `life`  命运报告
     - `relate`  人际报告 
     - `career`  职业报告 
@@ -633,7 +637,7 @@
   - 路由参数type的值
     - `feel`  合盘暧昧报告
     - `love`  合盘热恋报告
-
+    - `marry` 合盘婚后报告
   - JSON参数
 >
   |参数|必选|类型|说明|
@@ -694,7 +698,8 @@
         "code": 0,
         "msg": "success",
         "data": {
-            "s": "dcpG3uM4Nhz9T"
+            "s": "LaGqlXz715zZv",
+            "url": "https://dev-open.wowseer.com/h5/#/match?s=LaGqlXz715zZv&lang=tc"
         }
     }
   ```
@@ -1119,7 +1124,7 @@
   |name    |`ture`  |string|姓名 长度低于30                         |
   |gender  |`true`  |int   |性别 1=男，2=女
   |solar   |`true`  |string|生日 YYYY-MM-DD 类似2004-05-14 其中年份不得小于1900年，日期不能大于今天
-  |year    |`ture`  |int| 年份 例如 2025 不得小于当前年份 ，不得大于 2049
+  |year    |`ture`  |int| 年份不得小于等于当前年份 ，不得大于2049
   |times   |false   |string|具体出生时辰 例如 准确时间12:00 或模糊时间 12:00-12:59
 
   
@@ -1170,6 +1175,8 @@
       }
   }
   ```
+
+- 获取问卦咨询进度及网页页面链接 请调取 <span style="color: red;">查询报告是否完成</span>接口
 
 - 获取年运报告原始数据范例
 
@@ -1402,6 +1409,7 @@
   }
   ```
 
+- 获取问卦咨询进度及网页页面链接 请调取 <span style="color: red;">查询报告是否完成</span>接口
 - 获取问卦咨询原始数据范例
 
   ```bash
@@ -1513,3 +1521,57 @@
         "data": {}
     }
     ```
+
+## （年运报告+问卦咨询）查询报告是否完成（完成时返回网页链接）
+  - 请求方式 `GET`
+
+  - 接口地址 `https://{{host}}/check?s={s}`
+
+  - {s} 为创建相应报告返回唯一报告串
+
+- 获取问卦咨询原始数据范例
+
+  ```bash
+  curl --location 'https://dev-open.wowseer.com/api/check?s=xAs-zx58V'
+  ```
+
+- 等待服务咨询师回复报告中范例
+    ```json
+    {
+        "code": 4003,
+        "msg": "等待报告生成"
+    }
+    ```
+- 报告被驳回时范例
+    ```json
+    {
+        "code": 4005,
+        "msg": "驳回原因 。例如：请详细描述问卦的时间地点人物"
+    }
+    ```
+- 报告已生成时范例
+    ```json
+    {
+        "code": 0,
+        "msg": "success",
+        "data": {
+            "s": "LaGqlXz715zZv",
+            "url": "https://dev-open.wowseer.com/h5/#/match?s=LaGqlXz715zZv&lang=tc"
+        }
+    }
+    ```
+
+## 排盘网页页面
+
+  - 跳转地址 `https://{{h5url}}/plate?name={name}&gender={gender}&birth={birth}&hour={hour}&flag={flag}`
+
+  - query参数
+>
+  |参数|必选|类型|说明|
+  |:-----  |:-------:|:-----:|:-----  
+  |name    |`ture`  |string|姓名                       |
+  |gender   |`true`  |int|性别 1:男 2:女
+  |birth   |`true`  |string|生日 YYYY-MM-DD
+  |hour   |`false`  |int|生日小时（0-24）
+  |flag   |`false`  |bool|是否公历 默认true
+
