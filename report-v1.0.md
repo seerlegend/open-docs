@@ -1524,15 +1524,15 @@
 
 ## （年运报告+问卦咨询）查询报告是否完成（完成时返回网页链接）
   - 请求方式 `GET`
-
-  - 接口地址 `https://{{host}}/check?s={s}`
+  - 接口地址 `https://{{host}}/report/check?s={s}`
 
   - {s} 为创建相应报告返回唯一报告串
 
 - 获取问卦咨询原始数据范例
 
   ```bash
-  curl --location 'https://dev-open.wowseer.com/api/check?s=xAs-zx58V'
+  curl -X GET  --location 'https://dev-open.wowseer.com/api/report/check?s=xAs-zx58V' \
+    --header 'Authorization: 2001234.1699943199.bf08195e265a83e13630531519708becdb66b602263b628edd672343a7b9b187' 
   ```
 
 - 等待服务咨询师回复报告中范例
