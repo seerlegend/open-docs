@@ -73,7 +73,7 @@
 
 ## 生日报告
   - 请求方式 `POST`
-  - 接口地址 `https://{{host}}/report/birth/{{type}}`
+  - 接口地址 `{{host}}/report/birth/{{type}}`
   - 路由参数type的值
     - `all`   全能报告
     - `love`  恋爱报告
@@ -632,7 +632,7 @@
 ## 合盘报告
   - 请求方式 `POST`
 
-  - 接口地址 `https://{{host}}/report/union/{{type}}`
+  - 接口地址 `{{host}}/report/union/{{type}}`
 
   - 路由参数type的值
     - `feel`  合盘暧昧报告
@@ -1115,7 +1115,7 @@
   ```
 ## 年运报告
   - 请求方式 `POST`
-  - 接口地址 `https://{{host}}/report/year`
+  - 接口地址 `{{host}}/report/year`
 
   - JSON参数
 >
@@ -1347,7 +1347,7 @@
     ```
 ## 问卦咨询
   - 请求方式 `POST`
-  - 接口地址 `https://{{host}}/report/gua`
+  - 接口地址 `{{host}}/report/gua`
 
   - JSON参数
 >
@@ -1473,7 +1473,7 @@
     ```
 ### 问卦咨询驳回补充信息后再次提交
   - 请求方式 `POST`
-  - 接口地址 `https://{{host}}/report/gua/edit`
+  - 接口地址 `{{host}}/report/gua/edit`
 
   - JSON参数
 >
@@ -1524,7 +1524,7 @@
 
 ## （年运报告+问卦咨询）查询报告是否完成（完成时返回网页链接）
   - 请求方式 `GET`
-  - 接口地址 `https://{{host}}/report/check?s={s}`
+  - 接口地址 `{{host}}/report/check?s={s}`
 
   - {s} 为创建相应报告返回唯一报告串
 
@@ -1563,7 +1563,7 @@
 
 ## 排盘网页页面
 
-  - 跳转地址 `https://{{h5url}}/plate?name={name}&gender={gender}&birth={birth}&hour={hour}&flag={flag}`
+  - 跳转地址 `{{h5url}}/plate?name={name}&gender={gender}&birth={birth}&hour={hour}&flag={flag}`
 
   - query参数
 >
