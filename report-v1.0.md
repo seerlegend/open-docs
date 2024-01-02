@@ -646,6 +646,8 @@
   |users.gender  |`true`  |int   |性别 1=男，2=女
   |users.solar   |`true`  |string|生日 YYYY-MM-DD 类似2004-05-14 其中年份不得小于1900年,日期不得大于今天
   |users.times   |false   |string|具体出生时辰 例如 准确时间12:00 或模糊时间 12:00-12:59
+ |title   |false   |string|客户标题 `<50` 字(使用`data.url`预览时，html标题将显示此文字)
+  |brand   |false   |string|客户品牌图片地址，如`https://image-home.com/branch.png` `<200` 字(使用`data.url`预览时，html底部将显示此图片)
 
   - 响应内容
 > 
@@ -678,7 +680,9 @@
                 "times": "03:00-04:59",
                 "gender":2
             }
-        ]
+        ]，
+    "title":"标题",
+    "brand":"https://www.xxx.png",
     }'
   ```
 
@@ -1126,7 +1130,8 @@
   |solar   |`true`  |string|生日 YYYY-MM-DD 类似2004-05-14 其中年份不得小于1900年，日期不能大于今天
   |year    |`ture`  |int| 年份不得小于等于当前年份 ，不得大于2049
   |times   |false   |string|具体出生时辰 例如 准确时间12:00 或模糊时间 12:00-12:59
-
+ |title   |false   |string|客户标题 `<50` 字(使用`data.url`预览时，html标题将显示此文字)
+  |brand   |false   |string|客户品牌图片地址，如`https://image-home.com/branch.png` `<200` 字(使用`data.url`预览时，html底部将显示此图片)
   
 
   - 响应内容
@@ -1152,6 +1157,8 @@
       "solar": "2023-10-01",
       "times": "11:00-12:59",
       "year": 2025,
+      "title":"",
+      "brand":""
   }'
   ```
 
@@ -1359,6 +1366,8 @@
   |other   |`true`  |string|简要的额外的补充信息 具体为 何时何地为什么想达到什么目的 长度低于200
   |lys     |`ture`  |string| 六爻的每一卦的值 0=阳爻，1=阴爻，2=动阳爻，3=动阴爻，将每一个爻的值用英文逗号拼接传递，例如 3,2,1,0,3,2
   |when    |`ture`  |string| 起卦日期 YYYY-MM-DD 例如2023-02-26
+   |head   |false   |string|客户标题 `<50` 字(使用`data.url`预览时，html标题将显示此文字)
+  |brand   |false   |string|客户品牌图片地址，如`https://image-home.com/branch.png` `<200` 字(使用`data.url`预览时，html底部将显示此图片)
   
 
   - 响应内容
@@ -1384,7 +1393,9 @@
       "title": "股票走势",
       "other": "想看一下明天后天买的股票的涨跌趋势",
       "lys": "1,2,2,3,0,1",
-      "when":"2023-11-22"
+      "when":"2023-11-22",
+      "head":"",
+      "brand":""
   }'
   ```
 
