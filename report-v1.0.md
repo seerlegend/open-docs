@@ -5,12 +5,11 @@
 ## 服务域名host
 
   - 测试环境  `https://dev-open.wowseer.com/api`
-  - api生产环境 `TODO 根据合作情况进行确定`
-
+  - api生产环境 `https://open.wowseer.com/api`
 ## 网页可视化地址 h5url
 
   - 测试环境  `https://dev-open.wowseer.com/h5/#`
-  - api生产环境 `TODO 根据合作情况进行确定`
+  - api生产环境  `https://open.wowseer.com/h5/#`
 
 ## 接口认证
 
@@ -1125,7 +1124,7 @@
 >
   |参数|必选|类型|说明|
   |:-----  |:-------:|:-----:|:-----  
-  |name    |`ture`  |string|姓名 长度低于30                         |
+  |name    |`ture`  |string|姓名 长度低于50                         |
   |gender  |`true`  |int   |性别 1=男，2=女
   |solar   |`true`  |string|生日 YYYY-MM-DD 类似2004-05-14 其中年份不得小于1900年，日期不能大于今天
   |year    |`ture`  |int| 年份不得小于等于当前年份 ，不得大于2049
@@ -1360,7 +1359,7 @@
 >
   |参数|必选|类型|说明|
   |:-----  |:-------:|:-----:|:-----  
-  |name    |`ture`  |string|姓名 长度低于30                         |
+  |name    |`ture`  |string|姓名 长度低于50                         |
   |gender  |`true`  |int   |性别 1=男，2=女
   |title   |`true`  |string|卦题 例如 爱情 长度低于50
   |other   |`true`  |string|简要的额外的补充信息 具体为 何时何地为什么想达到什么目的 长度低于200
