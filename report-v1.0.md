@@ -1573,7 +1573,7 @@
 
 ## 排盘网页页面
 
-  - 跳转地址 `{{h5url}}/plate?name={name}&gender={gender}&birth={birth}&hour={hour}&flag={flag}`
+  - 跳转地址 `{{h5url}}/plate?name={name}&gender={gender}&birth={birth}&hour={hour}&flag={flag}&brand={brand}&title={title}`
 
   - query参数
 >
@@ -1584,4 +1584,5 @@
   |birth   |`true`  |string|生日 YYYY-MM-DD
   |hour   |`false`  |int|生日小时（0-24）
   |flag   |`false`  |bool|是否公历 默认true
-
+  |brand   |`false`  |string|品牌logo
+  |title   |`false`  |string|品牌名
