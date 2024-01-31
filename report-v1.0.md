@@ -656,7 +656,7 @@
   |data.url |string |        通过HiSeer提供的H5链接预览报告内容               |
   |data.s |string |       报告码               |
 
-### 生日<span style="color: green;">全能报告</span>请求样例
+### 职能<span style="color: green;">企业人才</span>请求样例
 
 - 基于`curl`命令进行请求
   ```bash
