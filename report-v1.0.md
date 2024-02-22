@@ -633,7 +633,7 @@
   - 接口地址 `{{host}}/report/talent/{{type}}`
   - 路由参数type的值
     - `enterprise`   企业人才报告
-    - `person`   个人职业报告
+    - `career`   个人职业报告
   - JSON参数
 >
   |参数|必选|类型|说明|
